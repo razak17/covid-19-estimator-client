@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{ title }}</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+      :root {
+        --dark-color-a: #2a0071;
+        --dark-color-b: #2a0071;
+        --light-color: #e6e9ff;
+        --success-color: #5cb85c;
+        --error-color: #d9534f;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        background: var(--light-color);
+        margin: 20px;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .btn {
+        cursor: pointer;
+        padding: 5px 15px;
+        background: var(--light-color);
+        color: var(--dark-color-a);
+        border: 0;
+        font-size: 17px;
+      }
+
+      .estimator-container {
+        max-width: 500px;
+        margin: 50px auto;
+        color: #fff;
+      }
+
+      .estimator-header {
+        text-align: center;
+        padding: 20px;
+        background: var(--dark-color-a);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .estimator-main {
+        padding: 30px 40px;
+        background: var(--dark-color-b);
+      }
+
+      .estimator-main p {
+        margin-bottom: 20px;
+      }
+
+      .estimator-main .form-control {
+        margin-bottom: 20px;
+      }
+
+      .estimator-main label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .estimator-main input[type='number'] {
+        font-size: 14px;
+        padding: 5px;
+        height: 30px;
+        width: 100%;
+      }
+
+      .estimator-main select {
+        font-size: 14px;
+        padding: 5px;
+        height: 30px;
+        width: 100%;
+      }
+
+      .estimator-main .btn {
+        margin-top: 20px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    {{ content | safe }}
+  </body>
+</html>

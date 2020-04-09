@@ -1,0 +1,59 @@
+---
+title: Home
+layout: base.njk
+---
+
+<div class="estimator-container">
+  <header class="estimator-header">
+    <h1>Covid-19 Novelty Estimator</h1>
+  </header>
+  <main class="estimator-main">
+    <form action="#">
+      <div class="form-control">
+        <label for="population">Population</label>
+        <input
+          type="number"
+          name="population"
+          id="data-population"
+          required
+        /><br /><br />
+
+        <label for="timeToElapse">Time to Elapse</label>
+        <input
+          type="number"
+          name="timeToElapse"
+          id="data-time-to-elapse"
+          required
+        /><br /><br />
+
+        <label for="reportedCases">Reported Cases</label>
+        <input
+          type="number"
+          name="cases"
+          id="data-reported-cases"
+          required
+        /><br /><br />
+
+        <label for="totalHospitalBeds">Total Hospital Beds</label>
+        <input
+          type="number"
+          name="hospitalBeds"
+          id="data-total-hospital-beds"
+          required
+        /><br />
+      </div>
+      <div class="form-control">
+        <label for="periodType">Period Type</label>
+        <select name="periodType" id="period-type">
+          <option value="days">Days</option>
+          <option value="weeks">Weeks</option>
+          <option value="months">Months</option>
+        </select>
+      </div>
+      <button type="submit" class="btn" id="data-go-estimate">
+        Calculate Estimate
+      </button>
+    </form>
+  </main>
+</div>
+<script type="module" src="js/main.js"></script>
