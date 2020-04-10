@@ -21,7 +21,7 @@ layout: base.njk
         <label for="data-time-to-elapse">Time to Elapse</label>
         <input
           type="number"
-          name="time"
+          name="timeToElapse"
           id="data-time-to-elapse"
           required
         /><br /><br />
@@ -29,7 +29,7 @@ layout: base.njk
         <label for="data-reported-cases">Reported Cases</label>
         <input
           type="number"
-          name="cases"
+          name="reportedCases"
           id="data-reported-cases"
           required
         /><br /><br />
@@ -37,20 +37,20 @@ layout: base.njk
         <label for="data-total-hospital-beds">Total Hospital Beds</label>
         <input
           type="number"
-          name="beds"
+          name="totalHospitalBeds"
           id="data-total-hospital-beds"
           required
         /><br />
       </div>
       <div class="form-control">
         <label for="period-type">Period Type</label>
-        <select name="period" id="period-type">
+        <select name="periodType" id="period-type">
           <option value="days">Days</option>
           <option value="weeks">Weeks</option>
           <option value="months">Months</option>
         </select>
       </div>
-      <button type="submit" name="submit" class="btn" id="data-go-estimate">
+      <button type="submit" name="button" class="btn" id="data-go-estimate">
         Calculate Estimate
       </button>
     </form>
