@@ -10,7 +10,7 @@ layout: base.njk
   <main class="estimator-main">
     <form action="#">
       <div class="form-control">
-        <label for="population">Population</label>
+        <label for="data-population">Population</label>
         <input
           type="number"
           name="population"
@@ -18,15 +18,15 @@ layout: base.njk
           required
         /><br /><br />
 
-        <label for="timeToElapse">Time to Elapse</label>
+        <label for="data-time-to-elapse">Time to Elapse</label>
         <input
           type="number"
-          name="timeToElapse"
+          name="time"
           id="data-time-to-elapse"
           required
         /><br /><br />
 
-        <label for="reportedCases">Reported Cases</label>
+        <label for="data-reported-cases">Reported Cases</label>
         <input
           type="number"
           name="cases"
@@ -34,23 +34,23 @@ layout: base.njk
           required
         /><br /><br />
 
-        <label for="totalHospitalBeds">Total Hospital Beds</label>
+        <label for="data-total-hospital-beds">Total Hospital Beds</label>
         <input
           type="number"
-          name="hospitalBeds"
+          name="beds"
           id="data-total-hospital-beds"
           required
         /><br />
       </div>
       <div class="form-control">
-        <label for="periodType">Period Type</label>
-        <select name="periodType" id="period-type">
+        <label for="period-type">Period Type</label>
+        <select name="period" id="period-type">
           <option value="days">Days</option>
           <option value="weeks">Weeks</option>
           <option value="months">Months</option>
         </select>
       </div>
-      <button type="submit" class="btn" id="data-go-estimate">
+      <button type="submit" name="submit" class="btn" id="data-go-estimate">
         Calculate Estimate
       </button>
     </form>
