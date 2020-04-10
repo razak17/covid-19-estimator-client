@@ -15,6 +15,7 @@ layout: base.njk
           type="number"
           name="population"
           id="data-population"
+          class="data-population"
           required
         /><br /><br />
 
@@ -23,6 +24,7 @@ layout: base.njk
           type="number"
           name="timeToElapse"
           id="data-time-to-elapse"
+          class="data-time-to-elapse"
           required
         /><br /><br />
 
@@ -31,6 +33,7 @@ layout: base.njk
           type="number"
           name="reportedCases"
           id="data-reported-cases"
+          class="data-reported-cases"
           required
         /><br /><br />
 
@@ -39,18 +42,19 @@ layout: base.njk
           type="number"
           name="totalHospitalBeds"
           id="data-total-hospital-beds"
+          class="data-total-hospital-beds"
           required
         /><br />
       </div>
       <div class="form-control">
         <label for="period-type">Period Type</label>
-        <select name="periodType" id="period-type">
+        <select name="periodType" id="period-type" class="period-type">
           <option value="days">Days</option>
           <option value="weeks">Weeks</option>
           <option value="months">Months</option>
         </select>
       </div>
-      <button type="submit" name="button" class="btn" id="data-go-estimate">
+      <button type="submit" name="button" class="data-go-estimate" id="data-go-estimate">
         Calculate Estimate
       </button>
     </form>
