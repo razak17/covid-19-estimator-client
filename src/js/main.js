@@ -1,4 +1,4 @@
-import covid19ImpactEstimator from './estimator/estimator.js';
+import covid19ImpactEstimator from './estimator.js';
 const estimatesForm = document.getElementById('estimates-form');
 
 const $ = (elem) => document.querySelector(`#${elem}`);
