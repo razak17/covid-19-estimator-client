@@ -8,14 +8,15 @@ layout: base.njk
     <h1>Covid-19 Novelty Estimator</h1>
   </header>
   <main class="estimator-main">
-    <form action="#">
+    <!-- INPUT FORM -->
+    <form action="#" id="estimates-form">
       <div class="form-control">
         <label for="data-population">Population</label>
         <input
           type="number"
           name="population"
           id="data-population"
-          class="data-population"
+          data-population
           required
         /><br /><br />
 
@@ -24,7 +25,7 @@ layout: base.njk
           type="number"
           name="timeToElapse"
           id="data-time-to-elapse"
-          class="data-time-to-elapse"
+          data-time-to-elapse
           required
         /><br /><br />
 
@@ -33,7 +34,7 @@ layout: base.njk
           type="number"
           name="reportedCases"
           id="data-reported-cases"
-          class="data-reported-cases"
+          data-reported-cases
           required
         /><br /><br />
 
@@ -42,22 +43,120 @@ layout: base.njk
           type="number"
           name="totalHospitalBeds"
           id="data-total-hospital-beds"
-          class="data-total-hospital-beds"
+          data-total-hospital-beds
           required
         /><br />
       </div>
       <div class="form-control">
         <label for="period-type">Period Type</label>
-        <select name="periodType" id="period-type" class="period-type">
+        <select name="periodType" id="data-period-type" data-period-type>
           <option value="days">Days</option>
           <option value="weeks">Weeks</option>
           <option value="months">Months</option>
         </select>
       </div>
-      <button type="submit" name="button" class="btn data-go-estimate" id="data-go-estimate">
-        Calculate Estimate
+      <button type="submit" class="btn" data-go-estimate>
+        Calculate
       </button>
     </form>
+
+    <!-- ESTIMATES -->
+    <div class="estimates">
+      <h5>Your Input</h5>
+      <p>
+        Population:
+        <span class="" id="population"></span>
+      </p>
+      <p>
+        Estimated Time:
+        <span class="" id="period"></span>
+      </p>
+      <p>
+        Reported Cases:
+        <span class="" id="reportedCases"></span>
+      </p>
+      <p>
+        Total Hospital Beds:
+        <span class="" id="hospitalBeds"></span>
+      </p>
+      <p>
+        Period Type:
+        <span class="" id="periodType"></span>
+      </p>
+    </div>
+
+    <!-- IMPACT -->
+    <div class="estimates">
+      <h5 class="text-center">
+        Impact
+      </h5>
+      <p>
+        Currently Infected:
+        <span class="" id="currentlyInfected"></span>
+      </p>
+      <p>
+        Infections By Estimated Time:
+        <span class="" id="infectionsByRequestedTime"></span>
+      </p>
+      <p>
+        Severe Cases By Estimated Time:
+        <span class="" id="severeCasesByRequestedTime"></span>
+      </p>
+      <p>
+        Available Hospital Beds:
+        <span class="" id="hospitalBedsByRequestedTime"></span>
+      </p>
+      <p>
+        Cases For ICU:
+        <span class="" id="casesForICUByRequestedTime"></span>
+      </p>
+      <p>
+        Cases For Ventilators:
+        <span class="" id="casesForVentilatorsByRequestedTime"></span>
+      </p>
+      <p>
+        Dollars in Flight:
+        <span class="" id="dollarsInFlight"></span>
+      </p>
+    </div>
+
+    <!-- SEVERE IMPACT -->
+    <div class="estimates">
+      <h5 class="text-center">
+        Severe Impact
+      </h5>
+      <p>
+        Currently Infected:
+        <span class="" id="severeImpactCurrentlyInfected"></span>
+      </p>
+      <p>
+        Infections By Estimated Time:
+        <span class="" id="severeImpactInfectionsByRequestedTime"></span>
+      </p>
+      <p>
+        Severe Cases By Estimated Time:
+        <span class="" id="severeImpactSevereCasesByRequestedTime"></span>
+      </p>
+      <p>
+        Available Hospital Beds:
+        <span class="" id="severeImpactHospitalBedsByRequestedTime"></span>
+      </p>
+      <p>
+        Cases For ICU:
+        <span class="" id="severeImpactCasesForICUByRequestedTime"></span>
+      </p>
+      <p>
+        Cases For Ventilators:
+        <span
+          class=""
+          id="severeImpactCasesForVentilatorsByRequestedTime"
+        ></span>
+      </p>
+      <p>
+        Dollars in Flight:
+        <span class="" id="severeImpactDollarsInFlight"></span>
+      </p>
+    </div>
   </main>
 </div>
-<script type="module" src="js/main.js"></script>
+<script type="module" src="./js/main.js"></script>
