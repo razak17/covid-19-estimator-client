@@ -1,7 +1,7 @@
-import {
+const {
   impactEstimates,
   severeImpactEstimates
-} from './handlers.js';
+} = require('./handlers/handlers');
 
 const covid19ImpactEstimator = (data) => ({
   data,
@@ -9,4 +9,4 @@ const covid19ImpactEstimator = (data) => ({
   severeImpact: severeImpactEstimates(data)
 });
 
-export default covid19ImpactEstimator;
+module.exports = covid19ImpactEstimator;

@@ -1,17 +1,17 @@
-import {
+const {
   convertToDays,
   requestedTime
-} from '../utils/utils.js';
+} = require('../utils/utils');
 
-const impactEstimates = (data) => {
+exports.impactEstimates = (data) => {
   // Challenge 1
   const currentlyInfected = data.reportedCases * 10;
   const infectionsByRequestedTime = currentlyInfected * requestedTime(data);
 
   // Challenge 2
-  const severeCasesByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.15);
+  const severeCasesByRequestedTime = infectionsByRequestedTime * 0.15;
   const availableBeds = data.totalHospitalBeds * 0.35;
-  const hospitalBedsByRequestedTime = Math.trunc(availableBeds - severeCasesByRequestedTime);
+  const hospitalBedsByRequestedTime = Math.ceil(availableBeds) - severeCasesByRequestedTime;
 
   // Challenge 3
   const casesForICUByRequestedTimeRaw = infectionsByRequestedTime * 0.05;
@@ -34,15 +34,15 @@ const impactEstimates = (data) => {
   };
 };
 
-const severeImpactEstimates = (data) => {
+exports.severeImpactEstimates = (data) => {
   // Challenge 1
   const currentlyInfected = data.reportedCases * 50;
   const infectionsByRequestedTime = currentlyInfected * requestedTime(data);
 
   // Challenge 2
-  const severeCasesByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.15);
+  const severeCasesByRequestedTime = infectionsByRequestedTime * 0.15;
   const availableBeds = data.totalHospitalBeds * 0.35;
-  const hospitalBedsByRequestedTime = Math.trunc(availableBeds - severeCasesByRequestedTime);
+  const hospitalBedsByRequestedTime = Math.ceil(availableBeds) - severeCasesByRequestedTime;
 
   // Challenge 3
   const casesForICUByRequestedTimeRaw = infectionsByRequestedTime * 0.05;
@@ -64,5 +64,3 @@ const severeImpactEstimates = (data) => {
     dollarsInFlight
   };
 };
-
-export { impactEstimates, severeImpactEstimates }
